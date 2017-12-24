@@ -6,6 +6,7 @@
     <title>FriendFinder Survey</title>
 
     <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="/css/survey.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -52,149 +53,143 @@
                             <div class="form-group">
                                 <label for="question-feminist">1. I would consider myself a feminist:</label>
                                 </br>
-                                <input type="radio" name="anser-feminist" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="anser-feminist" value="2"> 2
-                                <br>
-                                <input type="radio" name="anser-feminist" value="3"> 3
-                                <br>
-                                <input type="radio" name="anser-feminist" value="4"> 4
-                                <br>
-                                <input type="radio" name="anser-feminist" value="5"> 5 (Strongly Agree)
+                                <div class="form-group">
+                                    <div class="range">
+                                        <input type="range" min="1" max="5" steps="1" value="1">
+                                    </div>
+                                    <ul class="range-labels">
+                                        <li class="active selected">1 (Strongly Disagree)</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li>5 (Strongle Agree)</li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="question-tattoos">2. I like tattoos/piercings:</label>
                                 </br>
-                                <input type="radio" name="answer-tattoos" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="answer-tattoos" value="2"> 2
-                                <br>
-                                <input type="radio" name="answer-tattoos" value="3"> 3
-                                <br>
-                                <input type="radio" name="answer-tattoos" value="4"> 4
-                                <br>
-                                <input type="radio" name="answer-tattoos" value="5"> 5 (Strongly Agree)
+                                <input type="range" name="answer-tattoos" min="1" max="5" step="1" value="3">
+                                <datalist>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </datalist>
                             </div>
 
                             <div class="form-group">
                                 <label for="question-social">3. I use at least one social media platform (Facebook, Instagram, Twitter, etc.) every day:
                                 </label>
                                 </br>
-                                <input type="radio" name="answer-social" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="answer-social" value="2"> 2
-                                <br>
-                                <input type="radio" name="answer-social" value="3"> 3
-                                <br>
-                                <input type="radio" name="answer-social" value="4"> 4
-                                <br>
-                                <input type="radio" name="answer-social" value="5"> 5 (Strongly Agree)
+                                <input type="range" name="answer-social" min="1" max="5" step="1" value="3">
+                                <datalist>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </datalist>
                             </div>
 
                             <div class="form-group">
                                 <label for="question-evolution">4. I believe in evolution:
                                 </label>
                                 </br>
-                                <input type="radio" name="answer-evolution" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="answer-evolution" value="2"> 2
-                                <br>
-                                <input type="radio" name="answer-evolution" value="3"> 3
-                                <br>
-                                <input type="radio" name="answer-evolution" value="4"> 4
-                                <br>
-                                <input type="radio" name="answer-evolution" value="5"> 5 (Strongly Agree)
+                                <input type="range" name="answer-evolution" min="1" max="5" step="1" value="3">
+                                <datalist>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </datalist>
                             </div>
 
                             <div class="form-group">
                                 <label for="question-conservative">5. I support conservative politicians:
                                 </label>
                                 </br>
-                                <input type="radio" name="answer-conservative" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="answer-conservative" value="2"> 2
-                                <br>
-                                <input type="radio" name="answer-conservative" value="3"> 3
-                                <br>
-                                <input type="radio" name="answer-conservative" value="4"> 4
-                                <br>
-                                <input type="radio" name="answer-conservative" value="5"> 5 (Strongly Agree)
+                                <input type="range" name="answer-conservative" min="1" max="5" step="1" value="3">
+                                <datalist>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </datalist>
                             </div>
 
                             <div class="form-group">
                                 <label for="question-language">6. I speak more than one language:
                                 </label>
                                 </br>
-                                <input type="radio" name="answer-language" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="answer-language" value="2"> 2
-                                <br>
-                                <input type="radio" name="answer-language" value="3"> 3
-                                <br>
-                                <input type="radio" name="answer-language" value="4"> 4
-                                <br>
-                                <input type="radio" name="answer-language" value="5"> 5 (Strongly Agree)
+                                <input type="range" name="answer-language" min="1" max="5" step="1" value="3">
+                                <datalist>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </datalist>
                             </div>
 
                             <div class="form-group">
                                 <label for="question-bars">7. I like to go out to bars:
                                 </label>
                                 </br>
-                                <input type="radio" name="answer-bars" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="answer-bars" value="2"> 2
-                                <br>
-                                <input type="radio" name="answer-bars" value="3"> 3
-                                <br>
-                                <input type="radio" name="answer-bars" value="4"> 4
-                                <br>
-                                <input type="radio" name="answer-bars" value="5"> 5 (Strongly Agree)
+                                <input type="range" name="answer-bars" min="1" max="5" step="1" value="3">
+                                <datalist>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </datalist>
                             </div>
 
                             <div class="form-group">
                                 <label for="question-movies">8. I enjoy watching terrible movies to laugh at them:
                                 </label>
                                 </br>
-                                <input type="radio" name="answer-movies" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="answer-movies" value="2"> 2
-                                <br>
-                                <input type="radio" name="answer-movies" value="3"> 3
-                                <br>
-                                <input type="radio" name="answer-movies" value="4"> 4
-                                <br>
-                                <input type="radio" name="answer-movies" value="5"> 5 (Strongly Agree)
+                                <input type="range" name="answer-movies" min="1" max="5" step="1" value="3">
+                                <datalist>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </datalist>
                             </div>
 
                             <div class="form-group">
                                 <label for="question-horoscopes">9. I think horoscopes are fun:
                                 </label>
                                 </br>
-                                <input type="radio" name="answer-horoscopes" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="answer-horoscopes" value="2"> 2
-                                <br>
-                                <input type="radio" name="answer-horoscopes" value="3"> 3
-                                <br>
-                                <input type="radio" name="answer-horoscopes" value="4"> 4
-                                <br>
-                                <input type="radio" name="answer-horoscopes" value="5"> 5 (Strongly Agree)
+                                <input type="range" name="answer-horoscopes" min="1" max="5" step="1" value="3">
+                                <datalist>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </datalist>
                             </div>
 
                             <div class="form-group">
                                 <label for="question-god">10. I believe in a universal power or God:
                                 </label>
                                 </br>
-                                <input type="radio" name="answer-god" value="1" checked> 1 (Strongle Disagree)
-                                <br>
-                                <input type="radio" name="answer-god" value="2"> 2
-                                <br>
-                                <input type="radio" name="answer-god" value="3"> 3
-                                <br>
-                                <input type="radio" name="answer-god" value="4"> 4
-                                <br>
-                                <input type="radio" name="answer-god" value="5"> 5 (Strongly Agree)
+                                <input type="range" name="answer-god" min="1" max="5" step="1" value="3">
+                                <datalist>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </datalist>
                             </div>
 
                             <button type="submit" class="btn btn-primary submit">Find me a Friend!</button>

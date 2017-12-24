@@ -7,7 +7,7 @@ The questions asked in FriendFinder are based on research programs which have lo
 Compatibility Questions:
 1. I would consider myself a feminist.
 2. I like tattoos/piercings.
-3. I use facebook every day.
+3. I use at least one social media platform (Facebook, Instagram, Twitter, etc.) every day.
 4. I believe in evolution.
 5. I support conservative politicians.
 6. I speak more than one language.
