@@ -5,7 +5,9 @@ body {
 .range-slider {
   position: relative;
   display: flex;
-  width: 400px;
+  flex-direction: column;
+  width: 800px;
+  margin-top: 15px;
 }
 
 .range-slider > input {
@@ -22,7 +24,7 @@ body {
   height: 18px;
   margin: -8px 0 0;
   border-radius: 50%;
-  background: #37adbf;
+  background: #b2b2b2;
   cursor: pointer;
   border: 0 !important;
 }
@@ -32,7 +34,7 @@ body {
   height: 18px;
   margin: -8px 0 0;
   border-radius: 50%;
-  background: #37adbf;
+  background: #b2b2b2;
   cursor: pointer;
   border: 0 !important;
 }
@@ -42,7 +44,7 @@ body {
   height: 18px;
   margin: -8px 0 0;
   border-radius: 50%;
-  background: #37adbf;
+  background: #b2b2b2;
   cursor: pointer;
   border: 0 !important;
 }
@@ -96,25 +98,28 @@ body {
 
 .range-slider > .labels li::before {
   position: absolute;
-  top: -25px;
+  top: -27px;
   right: 0;
-  left: 0;
   content: "";
   margin: 0 auto;
   width: 9px;
   height: 9px;
   background: #b2b2b2;
   border-radius: 50%;
+  pointer-events: none;
 }
 
-.range-slider > .labels .active {
-  color: #37adbf;
+.range-slider > .labels li:first-child::before {
+  right: unset;
 }
 
-.range-slider > .labels .selected::before {
-  background: #37adbf;
+.range-slider > .labels li:last-child::before {
+  left: unset;
 }
 
-.range-slider > .labels .active.selected::before {
-  display: none;
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
 }
+
+
