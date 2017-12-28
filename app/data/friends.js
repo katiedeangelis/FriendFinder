@@ -99,7 +99,7 @@ var friendArray = [{
             "4",
             "5"
         ]
-    },
+    }
 ];
 
 // We export the array. This makes it accessible to other files using require.
