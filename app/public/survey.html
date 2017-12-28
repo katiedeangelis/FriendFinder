@@ -47,12 +47,12 @@
 
                             <div class="form-group">
                                 <label for="your-name">Name</label>
-                                <input type="text" class="form-control" placeholder="John Smith" id="your-name">
+                                <input type="text" class="form-control" placeholder="John Smith" id="friend-name">
                             </div>
 
                             <div class="form-group">
                                 <label for="your-name">Link to Photo Image</label>
-                                <input type="text" class="form-control" placeholder="https://img.huffingtonpost.com/" id="your-picture">
+                                <input type="text" class="form-control" placeholder="https://img.huffingtonpost.com/" id="friend-picture">
                             </div>
 
 
@@ -60,7 +60,7 @@
                                 <label for="question">1. I would consider myself a feminist:</label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-feminist">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -80,7 +80,7 @@
                                 <label for="question">2. I like tattoos/piercings:</label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-tattoos">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -100,7 +100,7 @@
                                 </label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-social">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -120,7 +120,7 @@
                                 </label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-evolution">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -140,7 +140,7 @@
                                 </label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-conservative">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -160,7 +160,7 @@
                                 </label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-language">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -180,7 +180,7 @@
                                 </label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-bars">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -200,7 +200,7 @@
                                 </label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-movies">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -220,7 +220,7 @@
                                 </label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-horoscopes">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -240,7 +240,7 @@
                                 </label>
                                 </br>
                                 <div class="range-slider">
-                                    <input type="range" min="1" max="5" steps="1" value="3">
+                                    <input type="range" min="1" max="5" steps="1" value="3" id="friend-god">
                                     <ul class="labels">
                                         <li>1</li>
                                         <li>2</li>
@@ -290,41 +290,41 @@
     $(".submit").on("click", function (event) {
         event.preventDefault();
 
+    //     {
+    //     "name": "Abed Nadiri",
+    //     "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    //     "scores": [
+    //         "5",
+    //         "1",
+    //         "4",
+    //         "4",
+    //         "5",
+    //         "1",
+    //         "2",
+    //         "5",
+    //         "4",
+    //         "1"
+    //     ]
+    // }
+
         // Here we grab the form elements
-        var newReservation = {
-            customerName: $("#reserve-name").val().trim(),
-            phoneNumber: $("#reserve-phone").val().trim(),
-            customerEmail: $("#reserve-email").val().trim(),
-            customerID: $("#reserve-unique-id").val().trim()
+        var newFriend = {
+            name: $("#friend-name").val().trim(),
+            photo: $("#friend-picture").val().trim(),
+            scores: [
+                $("#friend-feminist").val().trim(),
+                $("#friend-tattoos").val().trim(),
+                $("#friend-social").val().trim(),
+                $("#friend-evolution").val().trim(),
+                $("#friend-conservative").val().trim(),
+                $("#friend-language").val().trim(),
+                $("#friend-bars").val().trim(),
+                $("#friend-movies").val().trim(),
+                $("#friend-horoscopes").val().trim(),
+                $("#friend-god").val().trim()
+        ]
         };
 
-        console.log(newReservation);
-
-        // This line is the magic. It"s very similar to the standard ajax function we used.
-        // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-        // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-        // depending on if a tables is available or not.
-
-        $.post("/api/tables", newReservation,
-            function (data) {
-
-                // If a table is available... tell user they are booked.
-                if (data) {
-                    alert("Yay! You are officially booked!");
-                }
-
-                // If a table is available... tell user they on the waiting list.
-                else {
-                    alert("Sorry you are on the wait list");
-                }
-
-                // Clear the form when submitting
-                $("#reserve-name").val("");
-                $("#reserve-phone").val("");
-                $("#reserve-email").val("");
-                $("#reserve-unique-id").val("");
-
-            });
-
+        console.log(newFriend);
     });
 </script>
