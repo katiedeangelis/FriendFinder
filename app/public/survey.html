@@ -290,22 +290,22 @@
     $(".submit").on("click", function (event) {
         event.preventDefault();
 
-    //     {
-    //     "name": "Abed Nadiri",
-    //     "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    //     "scores": [
-    //         "5",
-    //         "1",
-    //         "4",
-    //         "4",
-    //         "5",
-    //         "1",
-    //         "2",
-    //         "5",
-    //         "4",
-    //         "1"
-    //     ]
-    // }
+        //     {
+        //     "name": "Abed Nadiri",
+        //     "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        //     "scores": [
+        //         "5",
+        //         "1",
+        //         "4",
+        //         "4",
+        //         "5",
+        //         "1",
+        //         "2",
+        //         "5",
+        //         "4",
+        //         "1"
+        //     ]
+        // }
 
         // Here we grab the form elements
         var newFriend = {
@@ -322,9 +322,33 @@
                 $("#friend-movies").val().trim(),
                 $("#friend-horoscopes").val().trim(),
                 $("#friend-god").val().trim()
-        ]
+            ]
         };
 
         console.log(newFriend);
+
+        $.post("/api/friends", newFriend,
+            function (data) {
+
+                // If a table is available... tell user they are booked.
+                if (data) {
+                    alert("Yay! You're survey has been submitted!");
+                }
+
+                // Clear the form when submitting
+                $("#friend-name").val("");
+                $("#friend-picture").val("");
+                $("#friend-feminist").val("");
+                $("#friend-tattoos").val("");
+                $("#friend-social").val("");
+                $("#friend-evolution").val("");
+                $("#friend-conservative").val("");
+                $("#friend-language").val("");
+                $("#friend-bars").val("");
+                $("#friend-movies").val("");
+                $("#friend-horoscopes").val("");
+                $("#friend-god").val("");
+
+            });
     });
 </script>
