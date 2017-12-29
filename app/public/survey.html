@@ -366,6 +366,7 @@
             }
             console.log("----- You Matched With: -----")
             console.log(bestFriendMatch);
+            $(".modal-body").html("");
             $(".modal-body").append('<h3>' + bestFriendMatch.name + '</h3>');
             $(".modal-body").append('<img src="' + bestFriendMatch.photo + '" />')
             $('#myModal').modal();
