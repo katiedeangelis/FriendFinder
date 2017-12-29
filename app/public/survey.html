@@ -264,6 +264,23 @@
             </div>
         </div>
 
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Meet Your New Best Friend!</h4>
+                </div>
+                <div class="modal-body">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
         <footer class="footer">
             <div class="container">
@@ -290,23 +307,6 @@
     $(".submit").on("click", function (event) {
         event.preventDefault();
 
-        //     {
-        //     "name": "Abed Nadiri",
-        //     "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        //     "scores": [
-        //         "5",
-        //         "1",
-        //         "4",
-        //         "4",
-        //         "5",
-        //         "1",
-        //         "2",
-        //         "5",
-        //         "4",
-        //         "1"
-        //     ]
-        // }
-
         // Here we grab the form elements
         var newFriend = {
             name: $("#friend-name").val().trim(),
@@ -324,8 +324,6 @@
                 $("#friend-god").val().trim()
             ]
         };
-
-        console.log(newFriend);
 
         $.ajax({
             type: "POST",
@@ -349,18 +347,28 @@
         });
 
         $.get("/api/friends", function (req, res) {
+            var bestFriendMatch = null;
+            var bestFriendMatchScore = null;
             for (i = 0; i < req.length; i++) {
+                var friendTotalDifference = 0;
                 var currentFriend = req[i];
-                console.log(currentFriend.name);
-                console.log(currentFriend.photo);
+                if (currentFriend.name === newFriend.name) { continue; };
                 for (j = 0; j < currentFriend.scores.length; j++) {
                     var currentFriendScore = currentFriend.scores[j];
-                    console.log("----- Other Friend Scores -----")
-                    console.log(currentFriendScore);
-                    console.log("----- Your Friend Scores -----")
-                    console.log(newFriend.scores);
+                    friendTotalDifference += Math.abs(currentFriendScore - newFriend.scores[j]);
+
                 }
+                if (bestFriendMatchScore == null || bestFriendMatchScore > friendTotalDifference) {
+                    bestFriendMatchScore = friendTotalDifference;
+                    bestFriendMatch = currentFriend;
+                }
+
             }
+            console.log("----- You Matched With: -----")
+            console.log(bestFriendMatch);
+            $(".modal-body").append('<h3>' + bestFriendMatch.name + '</h3>');
+            $(".modal-body").append('<img src="' + bestFriendMatch.photo + '" />')
+            $('#myModal').modal();
         });
     });
 </script>
