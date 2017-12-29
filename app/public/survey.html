@@ -327,15 +327,11 @@
 
         console.log(newFriend);
 
-        $.post("/api/friends", newFriend,
-            function (data) {
-
-                // If a table is available... tell user they are booked.
-                if (data) {
-                    alert("Yay! You're survey has been submitted!");
-                }
-
-                // Clear the form when submitting
+        $.ajax({
+            type: "POST",
+            url: "/api/friends",
+            data: newFriend,
+            success: function (data) {
                 $("#friend-name").val("");
                 $("#friend-picture").val("");
                 $("#friend-feminist").val("");
@@ -348,7 +344,23 @@
                 $("#friend-movies").val("");
                 $("#friend-horoscopes").val("");
                 $("#friend-god").val("");
+            },
+            traditional: true
+        });
 
-            });
+        $.get("/api/friends", function (req, res) {
+            for (i = 0; i < req.length; i++) {
+                var currentFriend = req[i];
+                console.log(currentFriend.name);
+                console.log(currentFriend.photo);
+                for (j = 0; j < currentFriend.scores.length; j++) {
+                    var currentFriendScore = currentFriend.scores[j];
+                    console.log("----- Other Friend Scores -----")
+                    console.log(currentFriendScore);
+                    console.log("----- Your Friend Scores -----")
+                    console.log(newFriend.scores);
+                }
+            }
+        });
     });
 </script>
