@@ -122,4 +122,8 @@ body {
   justify-content: space-between;
 }
 
+.modal-body img {
+  width: 100%;
+}
+
 
